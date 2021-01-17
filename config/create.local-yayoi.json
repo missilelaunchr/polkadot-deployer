@@ -1,0 +1,22 @@
+{
+  "name": "testnet9",
+  "type": "gcp",
+  "nodes": 12,
+  "nonValidatorIndices": [0],
+  "environmentNodeKeys": true,
+  "environmentKeys": true,
+  "keep": true,
+  "monitoring": {
+    "enabled": true,
+    "opsgenie": {
+      "enabled": false,
+      "url": "https://api.eu.opsgenie.com/"
+     }
+  },
+  "resources": {
+    "requests": {
+      "memory": "9Gi",
+      "cpu": "1.5"
+    }
+  },
+}
