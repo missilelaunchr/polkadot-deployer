@@ -1,22 +1,38 @@
 {
-  "name": "testnet9",
-  "type": "gcp",
-  "nodes": 12,
-  "nonValidatorIndices": [0],
-  "environmentNodeKeys": true,
-  "environmentKeys": true,
+  "name": "testnet5",
+  "type": "local",
+  "nodes": 2,
   "keep": true,
+
+
   "monitoring": {
     "enabled": true,
+    "telemetry": {
+      "server": {
+        "enabled": false
+      },
+      "submit": {
+        "submitUrl": "wss://telemetry-backend.domain.gcptest-10/submit"
+      }
+    },
     "opsgenie": {
-      "enabled": false,
-      "url": "https://api.eu.opsgenie.com/"
+      "enabled": true,
+      "url": "https://api.eu.opsgenie.com/",
+      "heartbeatEnabled": true
      }
   },
-  "resources": {
-    "requests": {
-      "memory": "9Gi",
-      "cpu": "1.5"
-    }
+
+  "chainspec": {
+    "custom": false,
+    "preset": true,
+    "name": "polkadot"
   },
+
+  "image": {
+    "repo": "parity/polkadot",
+    "tag": "v0.8.26-1"
+  }
+
+
+
 }
